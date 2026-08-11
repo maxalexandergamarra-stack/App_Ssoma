@@ -1,1 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>App SSOMA</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="encabezado">
+        <h1>🦺 App SSOMA</h1>
+        <p>Gestión de Seguridad y Salud en el Trabajo</p>
+    </header>
+
+    <main class="contenedor">
+
+        <section class="tarjeta">
+
+            <h2>Nueva inspección</h2>
+
+            <label for="obra">Obra / Proyecto</label>
+            <input 
+                type="text" 
+                id="obra" 
+                placeholder="Ejemplo: Edificio Los Olivos"
+            >
+
+            <label for="inspector">Inspector</label>
+            <input 
+                type="text" 
+                id="inspector" 
+                placeholder="Nombre del inspector"
+            >
+
+            <label for="fecha">Fecha</label>
+            <input 
+                type="date" 
+                id="fecha"
+            >
+
+            <label for="tipo">Tipo de inspección</label>
+            <select id="tipo">
+                <option value="">Seleccionar</option>
+                <option value="Inspección SST">Inspección SST</option>
+                <option value="Inspección de herramientas">Inspección de herramientas</option>
+                <option value="Inspección de EPP">Inspección de EPP</option>
+                <option value="Inspección de orden y limpieza">
+                    Inspección de orden y limpieza
+                </option>
+                <option value="Inspección de trabajo en altura">
+                    Inspección de trabajo en altura
+                </option>
+                <option value="Otra">Otra</option>
+            </select>
+
+            <label for="observacion">Observación</label>
+            <textarea 
+                id="observacion" 
+                rows="5"
+                placeholder="Describe el acto o condición encontrada..."
+            ></textarea>
+
+            <label for="riesgo">Nivel de riesgo</label>
+            <select id="riesgo">
+                <option value="">Seleccionar</option>
+                <option value="Bajo">🟢 Bajo</option>
+                <option value="Medio">🟡 Medio</option>
+                <option value="Alto">🟠 Alto</option>
+                <option value="Crítico">🔴 Crítico</option>
+            </select>
+
+            <label for="accion">Acción correctiva</label>
+            <textarea 
+                id="accion" 
+                rows="5"
+                placeholder="Indica la medida correctiva..."
+            ></textarea>
+
+            <label for="responsable">Responsable de la acción</label>
+            <input 
+                type="text" 
+                id="responsable" 
+                placeholder="Nombre del responsable"
+            >
+
+            <label for="fechaLimite">Fecha límite</label>
+            <input 
+                type="date" 
+                id="fechaLimite"
+            >
+
+            <label for="foto">Fotografía</label>
+            <input 
+                type="file" 
+                id="foto" 
+                accept="image/*" 
+                capture="environment"
+            >
+
+            <button id="guardar">
+                💾 Guardar inspección
+            </button>
+
+        </section>
+
+        <section class="tarjeta">
+
+            <h2>Inspecciones registradas</h2>
+
+            <div id="listaInspecciones">
+                <p class="vacio">
+                    Todavía no hay inspecciones registradas.
+                </p>
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="app.js"></script>
+
+</body>
+</html>
